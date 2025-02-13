@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tutorial_bloc/theme_switcher.dart';
+import 'package:tutorial_bloc/widgets/theme_switcher.dart';
 
 class PageOne extends StatelessWidget {
   const PageOne({super.key});

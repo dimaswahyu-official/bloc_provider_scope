@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tutorial_bloc/pages/counter/counter_bloc.dart';
-import 'package:tutorial_bloc/pages/page_three.dart';
-import 'package:tutorial_bloc/theme_switcher.dart';
+import 'package:tutorial_bloc/pages/page_two/bloc/counter_bloc.dart';
+import 'package:tutorial_bloc/pages/page_three/page_three.dart';
+import 'package:tutorial_bloc/widgets/theme_switcher.dart';
+
+part './part/counter_view.dart';
 
 class PageTwo extends StatelessWidget {
   const PageTwo({super.key});
@@ -27,7 +29,8 @@ class PageTwoView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            RouteAccessPagewTwo(),
+            CounterView(),
+            SizedBox(height: 24),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -56,49 +59,6 @@ class PageTwoView extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class RouteAccessPagewTwo extends StatelessWidget {
-  const RouteAccessPagewTwo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Column(
-        children: [
-          Text("STATE BLOC 2"),
-          BlocBuilder<CounterBloc, int>(
-            builder: (context, state) {
-              return Text("$state", style: TextStyle(fontSize: 46));
-            },
-          ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  context.read<CounterBloc>().decrement();
-                },
-                child: Text("DEC"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  context.read<CounterBloc>().increment();
-                },
-                child: Text("INC"),
-              ),
-            ],
-          ),
-        ],
       ),
     );
   }

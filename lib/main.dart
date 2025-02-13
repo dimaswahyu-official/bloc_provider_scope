@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tutorial_bloc/theme/theme_bloc.dart';
-import 'package:tutorial_bloc/pages/page_one.dart';
-import 'package:tutorial_bloc/pages/page_three.dart';
-import 'package:tutorial_bloc/pages/page_two.dart';
+import 'package:tutorial_bloc/bloc/theme/theme_bloc.dart';
+import 'package:tutorial_bloc/pages/page_one/page_one.dart';
+import 'package:tutorial_bloc/pages/page_three/page_three.dart';
+import 'package:tutorial_bloc/pages/page_two/page_two.dart';
 
 GlobalKey<NavigatorState> globalContext = GlobalKey<NavigatorState>();
 
@@ -43,13 +43,3 @@ class AppView extends StatelessWidget {
     );
   }
 }
-
-// SCOPE PROVIDER
-// GLOBAL (ThemeBloc)
-// All pages
-
-// ROUTE (CounterBloc)
-// PageTwo --> PageThree
-
-// LOCAL (EditTextBloc)
-// PageThree
